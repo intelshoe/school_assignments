@@ -7,7 +7,7 @@
 //function main begins program
 int main()
 {
-    int answer;      //user's age
+    int answer;              //user's answer
     char userInput[64];      //user input to be parsed into above
 
     //Present problem
