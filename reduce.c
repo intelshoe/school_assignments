@@ -39,7 +39,7 @@ void reduce(int x, int y)
     static int i = 0;     // used to sort through the reduction array
     static int reduced;    // final sum of all digits
 
-    // begin sorting each digit into array
+    // begin sorting each digit of first number into array
     while (x > 0) {
         int mod = x % 10;   // shave off last digit
         reduction[i] = mod; // store shaved digit in array
