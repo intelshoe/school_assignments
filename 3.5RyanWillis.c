@@ -11,11 +11,12 @@ int main()
     
     do_fun(&amt);      // Pass the memory address of amt
     printf("After return, amt is %d in main() \n", amt);
-    return 0;
     
     //wait for keypress to exit
     printf("\n\nPress any key to exit.");
     getchar();
+    
+    return 0;
 }
 
 void do_fun(int *amtAddress)  // Gets passed the memory location for variable amt
