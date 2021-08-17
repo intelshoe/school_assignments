@@ -11,13 +11,9 @@ float calculateCharges(float *x, float *y, float *z);
 int main()
 {
     char userInput[32];  //user input
-    float hours1;        //number of hours in garage for car 1
-    float hours2;        //number of hours in garage for car 2
-    float hours3;        //number of hours in garage for car 3
+    float hours1, hours2, hours3;        //number of hours in garage for car 3
     //these three variables used to store hours before they are converted into charges
-    float h1;
-    float h2;
-    float h3;
+    float h1, h2, h3;
     float totalHours; // total of all hours parked
     float totalCharges; // total of all charges
 
