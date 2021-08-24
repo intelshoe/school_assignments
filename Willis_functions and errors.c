@@ -1,6 +1,6 @@
 //Ryan Willis
 //August 24, 2021
-//4.3 Math Practice Week 3
+//4.3 Math Practice Week 4
 
 #include <stdio.h>
 
