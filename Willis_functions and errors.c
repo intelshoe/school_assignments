@@ -16,7 +16,7 @@ int main()
 {
     int option = 0;               //menu options
     char level;  //takes character difficulty input
-    int l; //level digit for rand gineration
+    int d; //level digit for rand gineration
 
     //go back to menu as long as option 5 (quit) not selected
     while (option != 5) {
@@ -29,29 +29,29 @@ int main()
         printf("\n5. Exit");
         printf("\nSelect an option: ");
         scanf("%d", &option);
+        //breaks out of while loop if option 5 chosen
+        if (option == 5) { break; }
         printf("\nPlease enter difficulty level e-easy, m-medium, or h-hard. ");
         label:
         scanf(" %c", &level);
-        l = difficulty(level);
+        int d = difficulty(level);
         //if error code, go to top of input for difficulty
-        if (l == 1400) {
+        if (d == 1400) {
            goto label;    // jump back up
            }
-        //breaks out of while loop if option 5 chosen
-        if (option == 5) { break; }
         //code for addition
         else if (option == 1) {
-            addition(l);
+            addition(d);
         }
         else if (option == 2) {
             //calls subtraction function
-            subtract(l);
+            subtract(d);
         }
         else if (option == 3) {
-            multiply(l);
+            multiply(d);
         }
         else if (option == 4) {
-            divide(l);
+            divide(d);
         }
     }
 
@@ -62,7 +62,7 @@ int main()
 
 int difficulty(char level) {
     if (level == 'e') {
-             return 10; // starting random number to use for easy level
+           return 10; // starting random number to use for easy level
     } else if (level == 'm') {
            return 100; // starting value for medium rand number
     } else if (level == 'h') {
