@@ -24,15 +24,15 @@ Please type 3 to quit. ");
           } 
           else if ( i == 2 && economy < 10 ) { // if choosing economy and open
                    economy++;
-                   seats[economy] = 1;
+                   seats[economy] = 1; // store in seating chart array
                    printf("Your seat number in economy is %d \n\n", economy);
-          } 
+          } //if first class is full but economy has seats:
           else if ( i == 1 && firstClass >= 5 && economy < 10) {
                    printf("The first class section is full, but you may try economy.");
-          } 
+          } //if economy is full but first class has seats:
           else if ( i == 2 && economy >= 10 && firstClass < 5 ) {
                  printf("The economy section is full, but you may buy first class.");
-          } 
+          } //if all seats are full, display message and break out of loop:
           else if ( i == 1 || i == 2 && economy >= 10 && firstClass >= 5 ) {
                  printf("All seats for the flight are sold. \n\
 The next flight leaves in 3 hours.");
