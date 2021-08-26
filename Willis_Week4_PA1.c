@@ -16,19 +16,24 @@ Please type 2 for economy. \n\
 Please type 3 to quit. ");
           //read user input into i
           scanf("%d", &i);
+        
           if (i == 1 && firstClass < 5 ) { // if choosing first class and it's open
              firstClass++;
              seats[firstClass] = 1;
              printf("Your seat number is %d in first class.\n\n", firstClass);
-          } else if ( i == 2 && economy < 10 ) { // if choosing economy and open
+          } 
+          else if ( i == 2 && economy < 10 ) { // if choosing economy and open
                    economy++;
                    seats[economy] = 1;
                    printf("Your seat number in economy is %d \n\n", economy);
-          } else if ( i == 1 && firstClass >= 5 && economy < 10) {
+          } 
+          else if ( i == 1 && firstClass >= 5 && economy < 10) {
                    printf("The first class section is full, but you may try economy.");
-          } else if ( i == 2 && economy >= 10 && firstClass < 5 ) {
+          } 
+          else if ( i == 2 && economy >= 10 && firstClass < 5 ) {
                  printf("The economy section is full, but you may buy first class.");
-          } else if ( i == 1 || i == 2 && economy >= 10 && firstClass >= 5 ) {
+          } 
+          else if ( i == 1 || i == 2 && economy >= 10 && firstClass >= 5 ) {
                  printf("All seats for the flight are sold. \n\
 The next flight leaves in 3 hours.");
                              break;
