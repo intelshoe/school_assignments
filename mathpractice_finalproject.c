@@ -128,51 +128,81 @@ do{
 
 void subtract(int d, int *score) {
      int guess = 0;
-     int num1 = rand() % d;
-     int num2 = rand() % d;
+     int num1 = rand() % d + 7;
+     int num2 = rand() % d + 2;
+     int count = 1; // keeps track of attempts
 
      printf("\n%d - %d = ? ", num1, num2);
-     scanf("%d", &guess);
      
-     if (guess == (num1 - num2)) {
-        printf("\nCorrect!\n\n");
-     }
-     else {
-          printf("\nSorry, play again.\n\n");
-     }
+do{
+    //user input given:
+    printf("\nTry #%d: ", count);
+    scanf("%d", &guess);
+    
+    //decide if right or wrong
+    if (guess == (num1 - num2)) {
+         attempt(true, score);
+         break; // no need to loop if correct answer
+    }
+    else {
+         attempt(false, score);
+         count++;
+    }
+    }while (count < 4);
 }
 
 void multiply(int d, int *score) {
      int guess = 0;
-     int num1 = rand() % d;
-     int num2 = rand() % d;
+     int num1 = rand() % d + 2;
+     int num2 = rand() % d + 1;
+     int count = 1; // keeps track of attempts
 
      printf("\n%d * %d = ? ", num1, num2);
-     scanf("%d", &guess);
      
-     if (guess == (num1 * num2)) {
-        printf("\nCorrect!\n\n");
-     }
-     else {
-     printf("\nSorry, play again.\n\n");
-     }
+do{
+    //user input given:
+    printf("\nTry #%d: ", count);
+    scanf("%d", &guess);
+    
+    //decide if right or wrong
+    if (guess == (num1 * num2)) {
+         attempt(true, score);
+         break; // no need to loop if correct answer
+    }
+    else {
+         attempt(false, score);
+         count++;
+    }
+    }while (count < 4);
 }
 
 void divide(int d, int *score) {
      int guess = 0;
      int num1 = rand() % d + 10;
      int num2 = rand() % d + 5;
+     int count = 1; // keeps track of attempts
 
      printf("\n%d / %d = ? ", num1, num2);
-     scanf("%d", &guess);
      
-     if (guess == (num1 / num2)) {
-        printf("Now enter any remainder: ");
-        scanf("%d", &guess);
-        if (guess == (num1 % num2)) {
-           printf("Correct!\n\n");
-        }
-        else { printf("Sorry, play again.\n\n"); }
-     } else {
-            printf("Sorry, play again.\n\n"); }
+     do{
+    //user input given:
+    printf("\nTry #%d: ", count);
+    scanf("%d", &guess);
+    
+    //decide if right or wrong
+    if (guess == (num1 / num2)) {
+       printf("Now enter any remainder: ");
+       scanf("%d", &guess);
+         if (guess == (num1 % num2)) {
+         attempt(true, score);
+         break; // no need to loop if correct answer
+         }
+         else { printf("Sorry, play again.\n\n"); }
+    }
+    else {
+         attempt(false, score);
+         count++;
+    }
+    }while (count < 4);
+
 }
